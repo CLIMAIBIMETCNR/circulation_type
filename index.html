@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tipi di Circolazione</title>
+<meta charset="UTF-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Cantarell|Josefin+Sans+Std+Light">
+<style type="text/css">
+header {
+   font-family: 'Josefin Sans Std Light', sans-serif;
+   font-size: 24px;
+}
+
+p {
+   font-family: 'Cantarell', sans-serif;
+   font-size: 18px;
+}
+ 
+div.static {
+             position: static;
+             height: 30px;
+             top: 5px; 
+             bottom: 5px;
+             border: 3px solid #73AD21;
+            }
+
+iframe {
+    
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 400px;
+    width: 100%;
+}
+     
+</style>  
+</head>
+<body>
+<header>Visualizzazione Tipi di Circolazione<br>
+<p id="file">File visualizzato: WT_pct09_ind_wt_1_1</p>
+</header>
+<p>Attivare il layer nella pagina con il menu a sinistra in alto. La visualizzazione può apparire lenta e vuole un browser con capacità canvas</p>
+<div class="static">
+Classificazione Circolazione
+
+<select id="classificazione" name="classificazione_A">
+	<option value="pct09">PCT09</option>
+	<option value="san09">SAN09</option>   
+</select>
+Classe di Circolazione
+<select id="WT" name="circulation">
+	<option value="1">WT_1</option>
+	<option value="2">WT_2</option>
+	<option value="3">WT_3</option>
+	<option value="4">WT_4</option>
+	<option value="5">WT_5</option>
+	<option value="6">WT_6</option>
+	<option value="7">WT_7</option>
+	<option value="8">WT_8</option>
+	<option value="9">WT_9</option>
+	  
+</select>
+Mese
+<select id="mese" name="mese">
+	<option value="1">JAN</option>
+	<option value="2">FEB</option>
+	<option value="3">MAR</option>
+	<option value="4">APR</option>
+	<option value="5">MAG</option>
+	<option value="6">JUN</option>
+	<option value="7">LUG</option>
+	<option value="8">AUG</option>
+	<option value="9">SEP</option>
+	<option value="10">OCT</option>
+	<option value="11">NOV</option>
+	<option value="12">DEC</option>
+</select>
+
+<button id="loadfile" onclick="loadhtml()">Visualizza</button>
+</div>
+<script>
+function loadhtml() {
+    var cla = document.getElementById("classificazione").value;
+    var wt = document.getElementById("WT").value;
+    var mese = document.getElementById("mese").value;
+    var files= "<red>File visualizzato</red>: WT_"+ cla+"_"+wt+"_"+mese+".html" 
+    document.getElementById("file").innerHTML = files;
+    document.all.iframe_WTA.src="html/WT_"+ cla+"_ind_wt_"+wt+"_"+mese+".html"
+}
+</script>
+<iframe id="iframe_WTA" src="html/WT_pct09_ind_wt_1_1.html" style="height=600"></iframe>
+<footer>LaMMA IBIMET-CNR Climatologia</footer>
+</body>
+</html>
+
