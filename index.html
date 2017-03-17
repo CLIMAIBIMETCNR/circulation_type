@@ -87,9 +87,9 @@ function loadhtml() {
     var cla = document.getElementById("classificazione").value;
     var wt = document.getElementById("WT").value;
     var mese = document.getElementById("mese").value;
-    var files= "<red>File visualizzato</red>: WT_"+ cla+"_"+wt+"_"+mese+".html" 
+    var files= "<red>File visualizzato</red>: WT_"+ cla+"_"+mese+"_"+wt+".html" 
     document.getElementById("file").innerHTML = files;
-    document.all.iframe_WTA.src="html/WT_"+ cla+"_ind_wt_"+wt+"_"+mese+".html"
+    document.all.iframe_WTA.src="html/WT_"+ cla+"_ind_wt_"+mese+"_"+wt+".html"
 }
 </script>
 <iframe id="iframe_WTA" src="html/WT_pct09_ind_wt_1_1.html" style="height=600"></iframe>
